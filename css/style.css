@@ -1,0 +1,130 @@
+/* css/style.css */
+
+body {
+  margin: 0;
+  font-family: 'Arial', sans-serif;
+  background: radial-gradient(#000428, #004e92);
+  color: white;
+  text-align: center;
+}
+
+h1, h2, p {
+  margin: 0.5em auto;
+  max-width: 80%;
+}
+
+a, button {
+  text-decoration: none;
+  border: none;
+  cursor: pointer;
+  font-size: 1rem;
+}
+
+.start-button {
+  padding: 15px 30px;
+  background: #1f2937;
+  color: white;
+  border-radius: 10px;
+  box-shadow: 0 0 10px #00c3ff;
+  margin-top: 20px;
+  display: inline-block;
+}
+
+.welcome-container {
+  padding: 2em;
+}
+
+.game-wrapper {
+  display: flex;
+  flex-direction: row-reverse;
+  justify-content: space-around;
+  padding: 2em;
+  align-items: center;
+}
+
+.money-ladder {
+  display: flex;
+  flex-direction: column-reverse;
+  background: #111;
+  border-radius: 10px;
+  padding: 1em;
+  max-height: 80vh;
+  overflow-y: auto;
+  align-items: flex-end;
+}
+
+.ladder-item {
+  display: flex;
+  justify-content: space-between;
+  width: 140px;
+  padding: 10px;
+  margin: 3px auto;
+  border-radius: 5px;
+  color: orange;
+  font-weight: bold;
+  text-align: right;
+}
+
+.ladder-item.active {
+  background-color: #f0c420;
+  color: black;
+  box-shadow: 0 0 10px #f0c420;
+}
+
+.question-box {
+  background: #001f3f;
+  border-radius: 20px;
+  padding: 2em;
+  width: 90%; 
+  box-shadow: 0 0 20px rgba(0,255,255,0.5);
+  margin: auto;
+}
+
+.question-box h2 {
+  margin-bottom: 1em;
+}
+
+.question-box button {
+  display: block;
+  width: 350px;      
+  padding: 20px 30px; 
+  margin: 10px;
+  background: #002f4f;
+  border-radius: 10px;
+  color: #00e6ff;
+  font-weight: bold;
+  font-size: 1.1em;
+  box-shadow: 0 0 10px #00e6ff;
+  transition: all 0.3s ease;
+}
+
+.question-box button:hover {
+  background: #004080;
+  transform: scale(1.05);
+}
+
+.lifeline-bar {
+  margin-top: 1em;
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+}
+
+.lifeline-bar img {
+  width: 40px;
+  cursor: pointer;
+  filter: drop-shadow(0 0 5px white);
+}
+
+.answers-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 1em;
+  align-items: center;
+}
+
+.answer-row {
+  display: flex;
+  gap: 2em;
+  justify-content: center;
+}
