@@ -116,7 +116,7 @@ if (isset($_SESSION['fifty_options']) && $_SESSION['fifty_options']['q'] === $_S
     <h1 style="font-family: 'Trebuchet MS', Arial, sans-serif; font-size: 2.5em; color:white;">
       Who Wants to Be a Millionaire?
     </h1>
-    <img src="assets/logo.png" alt="Millionaire Logo" style="max-width: 220px; width: 100%; height: auto;">
+    <img src="assets/icons/logo.png" alt="Millionaire Logo" style="max-width: 220px; width: 100%; height: auto;">
   </div>
 
   <div class="game-wrapper">
