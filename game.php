@@ -2,6 +2,17 @@
 session_start();
 include('data/questions.php');
 include('lifelines.php');
+include ('leaderboard.php');
+
+
+// set the name when coming from the login and index form
+$player = $_SESSION['username'] ?? 'Guest';
+
+
+
+
+
+
 
 // Initialize game session
 if (!isset($_SESSION['q_index'])) {
@@ -100,6 +111,8 @@ if (isset($_SESSION['fifty_options']) && $_SESSION['fifty_options']['q'] === $_S
 }
 ?>
 
+
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -133,6 +146,38 @@ if (isset($_SESSION['fifty_options']) && $_SESSION['fifty_options']['q'] === $_S
     </h1>
     <img src="assets/icons/logo1.png" alt="Millionaire Logo" style="max-width: 220px; width: 100%; height: auto;">
   </div>
+
+
+
+
+<?php
+require_once 'leaderboard.php';
+$board = get_leaderboard();
+?>
+<div class="leaderboard">
+  <h2>Top 5 Players</h2>
+  <?php if (empty($board)): ?>
+    <p>No scores</p>
+  <?php else: ?>
+    <ol>
+      <?php foreach ($board as $entry): ?>
+        <li>
+          <span class="lb-name">
+            <?= htmlspecialchars($entry['name'], ENT_QUOTES) ?>
+          </span>
+          <span class="lb-score">
+            <?= number_format($entry['score']) ?>
+          </span>
+        </li>
+      <?php endforeach; ?>
+    </ol>
+  <?php endif; ?>
+</div>
+
+
+
+
+
 
   <div class="game-wrapper">
     <div class="money-ladder">

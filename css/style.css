@@ -171,3 +171,14 @@ a, button {
   font-size: 1.1em;
   max-width: 500px;
 }
+
+.leaderboard {
+  position: fixed;  
+  top: 4em;
+  right: 4em;
+  width: 220px;
+  background: rgba(0,0,0,0.6);
+  padding: 1rem;
+  border-radius: 10px;
+
+}

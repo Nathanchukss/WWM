@@ -1,5 +1,16 @@
-<!-- index.php -->
-<?php session_start(); session_destroy(); ?>
+<?php 
+session_start();  
+
+if ($_SERVER['REQUEST_METHOD'] === 'POST' && !empty($_POST['username'])) {
+    //
+    $name = $_POST['username'];
+
+    // store in session
+    $_SESSION['username'] = $name;
+}
+
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -19,6 +30,10 @@
       Answer it right, and you’ll win a million dollars! Your intellect and knowledge are the keys to success.<br><br>
       Think you’ve got what it takes? Go ahead and play—put your random facts to good use and turn them into a million dollars.
     </p>
+    <p></p>
+    <h1 style="font-family: 'Trebuchet MS', Arial, sans-serif; font-size: 2.5em; color:white;">
+      Welcome <?php print $_POST['username'] ?>
+    </h1>
     <a href="game.php" class="start-button" 
     style="display: inline-block; text-align: center; 
     padding: 10px 20px; background-color: #007bff; 
