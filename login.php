@@ -77,7 +77,7 @@
     <h1>Login to Play</h1>
 
     <form action="index.php" method="post">
-      <input type="text" name="visitor_name" placeholder="Your Name" required>
+      <input type="text" name="username" placeholder="Your Name" required>
       <input type="password" name="password" placeholder="Password" required>
       <br>
       <button type="submit" class="start-button">Start Game</button>

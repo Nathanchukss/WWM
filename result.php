@@ -1,8 +1,34 @@
 <?php
+
+
+
+
 $reason = $_GET['reason'] ?? 'wrong';
 $win = $_GET['win'] ?? 'false';
 
 session_start();
+
+
+require_once 'leaderboard.php';
+
+// Determine player name & score.
+$player = $_SESSION["username"] ?? 'Guest???';
+$q_index = $_SESSION['q_index'] ?? 0;
+
+// If they won all 15 questions:
+if (isset($_GET['win']) && $_GET['win'] === 'true') {
+    $score = pow(2, 14) * 100; // $1,638,400 for question 15
+} else {
+    // Last correct = index-1
+    $last = max(0, $q_index - 1);
+    $score = pow(2, $last) * 100;
+}
+
+// Record into leaderboard
+record_score($player, $score);
+
+
+
 session_destroy();
 ?>
 <!DOCTYPE html>
@@ -79,9 +105,9 @@ session_destroy();
 </head>
 <body class="<?= $reason === 'timeout' ? 'fade-out' : '' ?>">
 
-  <!-- 🔊 Sound for result -->
-  <audio autoplay>
-    <source src="assets/sounds/<?= $win === 'true' ? 'correct' : 'wrong' ?>.mp3" type="audio/mpeg">
+   <!-- 🔊 Sound for results -->
+  <audio controls>
+    <source src="assets/sounds/<?= $win === 'true' ? 'win.mp3' : ($reason === 'timeout' ? 'lose.mp3' : 'lose.mp3') ?>" type="audio/mpeg">
   </audio>
 
   <!-- 🎉 Confetti if win -->
@@ -107,7 +133,7 @@ session_destroy();
       ?>
     </h1>
 
-    <a href="index.php" class="start-button">Play Again</a>
+    <a href="login.php" class="start-button">Play Again</a>
   </div>
 
 </body>
