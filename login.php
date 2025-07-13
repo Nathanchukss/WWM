@@ -73,7 +73,7 @@
 <body>
 
   <div class="login-container">
-    <img src="assets/icons/logo.png" alt="WWM Logo">
+    <img src="assets/icons/logo1.png" alt="WWM Logo">
     <h1>Login to Play</h1>
 
     <form action="index.php" method="post">
