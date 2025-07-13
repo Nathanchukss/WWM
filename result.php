@@ -79,9 +79,9 @@ session_destroy();
 </head>
 <body class="<?= $reason === 'timeout' ? 'fade-out' : '' ?>">
 
-  <!-- 🔊 Sound for result -->
-  <audio autoplay>
-    <source src="assets/sounds/<?= $win === 'true' ? 'correct' : 'wrong' ?>.mp3" type="audio/mpeg">
+  <!-- 🔊 Sound for results -->
+  <audio controls>
+    <source src="assets/sounds/<?= $win === 'true' ? 'win.mp3' : ($reason === 'timeout' ? 'lose.mp3' : 'lose.mp3') ?>" type="audio/mpeg">
   </audio>
 
   <!-- 🎉 Confetti if win -->
