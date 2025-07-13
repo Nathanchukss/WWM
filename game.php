@@ -123,7 +123,7 @@ if (isset($_SESSION['fifty_options']) && $_SESSION['fifty_options']['q'] === $_S
   </style>
 </head>
 <body>
-  <audio autoplay loop>
+  <audio controls loop>
     <source src="assets/sounds/background.mp3" type="audio/mpeg">
   </audio>
 
