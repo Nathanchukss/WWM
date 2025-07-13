@@ -106,6 +106,21 @@ if (isset($_SESSION['fifty_options']) && $_SESSION['fifty_options']['q'] === $_S
   <title>Millionaire Game</title>
   <link rel="stylesheet" href="css/style.css">
   <meta http-equiv="refresh" content="<?= $timeLeft ?>;url=result.php?win=false&reason=timeout">
+  <style>
+    .question-box {
+      opacity: 0;
+      animation: fadeIn 0.8s ease-in-out forwards;
+      animation-delay: 0.2s;
+      transform: scale(0.97);
+    }
+
+    @keyframes fadeIn {
+      to {
+        opacity: 1;
+        transform: scale(1);
+      }
+    }
+  </style>
 </head>
 <body>
   <audio autoplay loop>
