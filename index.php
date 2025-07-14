@@ -32,7 +32,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && !empty($_POST['username'])) {
     </p>
     <p></p>
     <h1 style="font-family: 'Trebuchet MS', Arial, sans-serif; font-size: 2.5em; color:white;">
-      Welcome <?php print $_POST['username'] ?>
+      Welcome <?php print $_SESSION['username'] ?>
     </h1>
     <a href="game.php" class="start-button" 
     style="display: inline-block; text-align: center; 
